@@ -15,7 +15,7 @@ class Booking extends Model
         'date',
         'time',
         'email',
-        'emai_sent',
+        'email_sent',
         'code',
         'phone',
         'service_name',

@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Kirov', // Or any timezone that's UTC+3
 
     /*
     |--------------------------------------------------------------------------

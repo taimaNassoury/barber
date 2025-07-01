@@ -12,7 +12,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('bookings:send-reminders')->everyMinute();
+        // In app/Console/Kernel.php
+        $schedule->command('bookings:send-reminders')
+            ->sendOutputTo(storage_path('logs/reminders.log'));
     }
 
     /**
