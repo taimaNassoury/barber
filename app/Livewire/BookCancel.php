@@ -22,6 +22,11 @@ class BookCancel extends Component
 
     public function render()
     {
+
+        if (!$this->dateFilter && !$this->whoDeleteFilter && !$this->emailFilter) {
+            return view('livewire.book-cancel', ['booking_cancel' => collect()]);
+        }
+
         return view('livewire.book-cancel', [
             'booking_cancel' => ModelsBookCancel::query()
                 ->when($this->dateFilter, function ($query) {

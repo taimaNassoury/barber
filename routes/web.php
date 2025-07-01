@@ -3,7 +3,7 @@
 use App\Models\SchedualDate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\HomeController; 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeImgController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -62,7 +62,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/home/schedual/date/update/{id}', [SchedualDateController::class, 'update'])->name('admin.date.update');
         Route::delete('/home/schedual/date/delete/{id}', [SchedualDateController::class, 'delete'])->name('admin.date.delete');
 
-      
+
         Route::match(['get', 'post'], '/home/DateBarber', [DateBarberController::class, 'index'])->name('admin.date.barber.index');
         Route::get('/home/DateBarber/create', [DateBarberController::class, 'create'])->name('admin.date.barber.create');
         Route::post('/home/DateBarber/store', [DateBarberController::class, 'store'])->name('admin.date.barber.store');
@@ -73,14 +73,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/booking_schedule', function () {
             return view('Dashboard.admin');
         })->name('schedule');
-  
     });
 });
 
 
 Route::resource('/books', BookController::class);
 Route::resource('/booking',  CustomerDetailsController::class);
-Route::get('/showBooking/{id}', [CustomerDetailsController::class, 'showBooking'])->name('showBooking');
+
+Route::get('/showBooking/{id}', [CustomerDetailsController::class, 'showBooking'])->name('showBooking')->middleware('signed');
 
 
 Route::get('/dashboard', function () {
@@ -93,4 +93,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
