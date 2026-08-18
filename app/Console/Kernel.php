@@ -7,14 +7,20 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+
+    protected $commands = [
+
+        \App\Console\Commands\SendBookingReminders::class,
+
+    ];
+
     /**
      * Define the application's command schedule.
      */
     protected function schedule(Schedule $schedule): void
     {
         // In app/Console/Kernel.php
-        $schedule->command('bookings:send-reminders')
-            ->sendOutputTo(storage_path('logs/reminders.log'));
+        $schedule->command('bookings:send-reminders')->everyMinute()->withoutOverlapping();
     }
 
     /**

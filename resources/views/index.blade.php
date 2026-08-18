@@ -3,20 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
     <title>jim-barbershop.com - Barber Shop</title>
-    <link
-        type="image/x-icon"
-        href="{{ asset('assets/images/jym post.svg') }}"
-        rel="icon"
-    >
+    <link type="image/x-icon" href="{{ asset('assets/images/jym post.svg') }}" rel="icon">
 
     <style>
         body,
@@ -716,27 +706,15 @@
             <div class="dot"></div>
             <div class="dot"></div>
         </div>
-        <img
-            class="preloader-custom-img"
-            src="{{ asset('assets/images/jym-postlol.png') }}"
-            alt="Loading Icon"
-        >
+        <img class="preloader-custom-img" src="{{ asset('assets/images/jym-postlol.png') }}" alt="Loading Icon">
 
     </div>
     <!-- Main Image with Logo -->
     <div class="main-image-wrapper">
         @if ($home_img)
-            <img
-                class="main-image"
-                src="{{ asset($home_img->image) }}"
-                alt="Main Image"
-            >
+            <img class="main-image" src="{{ asset($home_img->image) }}" alt="Main Image">
         @endif
-        <img
-            class="logo"
-            src="{{ asset('assets/images/jym-postlol.png') }}"
-            alt="Logo"
-        >
+        <img class="logo" src="{{ asset('assets/images/jym-postlol.png') }}" alt="Logo">
     </div>
 
     <!-- Content Section -->
@@ -755,20 +733,14 @@
             <div class="columns">
                 @foreach ($chunk as $service)
                     <div class="column">
-                        <img
-                            src="{{ $service->image }}"
-                            alt="Service Image"
-                        >
+                        <img src="{{ $service->image }}" alt="Service Image">
                         <h3>{{ $service->name }}</h3>
                         <p>{{ $service->price }}
                             @if (!is_null($service->max_price))
                                 - {{ $service->max_price }}
                             @endif {{ $service->currency }}
                         </p>
-                        <a
-                            class="button"
-                            href="{{ route('books.show', $service->id) }}"
-                        >Bouk Nu</a>
+                        <a class="button" href="{{ route('books.show', $service->id) }}">Bouk Nu</a>
                     </div>
                 @endforeach
             </div>
@@ -791,11 +763,7 @@
     <div class="testimonial-container">
         <div class="testimonial">
             <div class="testimonial-content">
-                <img
-                    class="testimonial-img2"
-                    src="{{ asset('assets/images/Untitled-1.png') }}"
-                    alt="Person 2"
-                >
+                <img class="testimonial-img2" src="{{ asset('assets/images/Untitled-1.png') }}" alt="Person 2">
                 <div class="testimonial-text">
                     <h3 id="testimonial-name">tymen vererfven</h3>
                     <div class="stars">
@@ -807,18 +775,9 @@
             </div>
         </div>
         <div class="dots2">
-            <span
-                class="dot2"
-                onclick="showSlide(1)"
-            ></span>
-            <span
-                class="dot2"
-                onclick="showSlide(2)"
-            ></span>
-            <span
-                class="dot2"
-                onclick="showSlide(3)"
-            ></span>
+            <span class="dot2" onclick="showSlide(1)"></span>
+            <span class="dot2" onclick="showSlide(2)"></span>
+            <span class="dot2" onclick="showSlide(3)"></span>
         </div>
     </div>
 
@@ -827,32 +786,22 @@
         <iframe
             src="https://maps.google.com/maps?q=Stormestraat%20123%2C%20Waregem%208790%2C%20Jim%20barbershop&amp;t=m&amp;z=11&amp;output=embed&amp;iwloc=near"
             title="Stormestraat 123, Waregem 8790, Jim barbershop"
-            aria-label="Stormestraat 123, Waregem 8790, Jim barbershop"
-            loading="lazy"
-        ></iframe>
+            aria-label="Stormestraat 123, Waregem 8790, Jim barbershop" loading="lazy"></iframe>
     </div>
     </div>
     <div class="footer">
-        <img
-            src="{{ asset('assets/images/jym-postlol.png') }}"
-            alt="Logo"
-        > <!-- Replace with your logo path -->
+        <img src="{{ asset('assets/images/jym-postlol.png') }}" alt="Logo"> <!-- Replace with your logo path -->
         <div class="line"></div>
         <div class="social-icons">
-            <a
-                href="https://www.facebook.com/profile.php?id=100092536564619&mibextid=ZbWKwL"
-                target="_blank"
-            ><i class="fab fa-facebook"></i></a>
-            <a
-                href="https://www.instagram.com/jim_barber_shop__/"
-                target="_blank"
-            ><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100092536564619&mibextid=ZbWKwL" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/jim_barber_shop__/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 
     <!-- Copyright Section -->
     <div class="copyright">
-        &copy;2024 by JIM Barber-shop. Made By Brand Engine
+        &copy; <?php echo date('Y'); ?> by JIM Barber-shop. Made By Brand Engine
     </div>
 
 

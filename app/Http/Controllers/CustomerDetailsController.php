@@ -90,10 +90,10 @@ class CustomerDetailsController extends Controller
                 ]);
             }
 
-            Mail::to($request->input('email'))->send(new BookingConfirmation($booking));
-            Mail::to('nadeemmassouh@gmail.com')->send(new BookingConfirmationAdmin($booking, 'new_booking'));
-            Mail::to('Jameelmassouh2@gmail.com')->send(new BookingConfirmationAdmin($booking, 'new_booking'));
-            Mail::to('Yasserkahla8@gmail.com')->send(new BookingConfirmationYasser($booking, 'new_booking'));
+            // Mail::to($request->input('email'))->send(new BookingConfirmation($booking));
+            // Mail::to('nadeemmassouh@gmail.com')->send(new BookingConfirmationAdmin($booking, 'new_booking'));
+            // Mail::to('Jameelmassouh2@gmail.com')->send(new BookingConfirmationAdmin($booking, 'new_booking'));
+            // Mail::to('Yasserkahla8@gmail.com')->send(new BookingConfirmationYasser($booking, 'new_booking'));
             return view('success');
         } catch (Exception $e) {
             // Handle any exceptions

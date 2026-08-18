@@ -3,10 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Models\Booking;
-use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Console\Command;
 use App\Mail\BookingReminderMail;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class SendBookingReminders extends Command
 {
@@ -31,6 +32,8 @@ class SendBookingReminders extends Command
 
         if ($bookings->isEmpty()) {
             $this->info('No bookings found for reminders.');
+            Log::info('Hello world no');
+
             return;
         }
 
@@ -42,6 +45,7 @@ class SendBookingReminders extends Command
                 $booking->update(['email_sent' => true]);
 
                 $this->info("Reminder sent to: {$booking->email} for booking at {$booking->time}");
+                Log::info('Hello world');
             } catch (\Exception $e) {
                 $this->error("Failed to send email to {$booking->email}: {$e->getMessage()}");
             }
